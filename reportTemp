@@ -1,43 +1,51 @@
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.common.by import By
-from bs4 import BeautifulSoup
+#from selenium.webdriver.support.ui import WebDriverWait
+#from selenium.webdriver.support import expected_conditions
+#from selenium.webdriver.common.by import By
+#from bs4 import BeautifulSoup
 import random
 
-url='https://zh.surveymonkey.com/r/VendorHealthCheck'
 
-emploIDlst=['H0289550','T7907280','U9168010','T8616750','K0947990','F9505280','K1318990','V1918870']#在這邊加入工號
+emploIDlst=['H0289550','T7907280','U9168010']#在這邊加入工號
 
-browser2=webdriver.Chrome(r'C:\chromedriver')
+browser = webdriver.Chrome(r'C:\chromedriver')
 
-for i in range(len(emploIDlst)):
+def reportBodyTemperature(browser,emploIDlst):
 
-    browser2.get(url)
-    button1=browser2.find_element_by_xpath('//*[@id="664936874_4368478786_label"]/span[1]')
-    emploID=browser2.find_element_by_xpath('//*[@id="664936884"]')
-    button2=browser2.find_element_by_xpath('//*[@id="664936876_4368478788_label"]/span[1]')
-    bodytemp=browser2.find_element_by_xpath('//*[@id="664936872"]')
-    button4=browser2.find_element_by_xpath('//*[@id="664936881_4368478813_label"]/span[1]')
-    button5=browser2.find_element_by_xpath('//*[@id="664936882_4368478814_label"]/span[1]')
-    button6=browser2.find_element_by_xpath('//*[@id="664936883_4368478817_label"]/span[1]')
-    button7=browser2.find_element_by_xpath('//*[@id="664936885_4368478848_label"]/span[1]')
-    button8=browser2.find_element_by_xpath('//*[@id="664937035_4368479770_label"]/span[1]')
-    buttonYes=browser2.find_element_by_xpath('//*[@id="664936873_4368478778_label"]/span[1]')
-    buttonDone=browser2.find_element_by_xpath('//*[@id="patas"]/main/article/section/form/div[2]/button')
+    for i in range(len(emploIDlst)):
+        
+        url='https://zh.surveymonkey.com/r/VendorHealthCheck'
+        browser.get(url)
 
-    button1.click()
+        buttonAgree=browser.find_element_by_xpath('//*[@id="664936874_4368478786_label"]/span[1]')
+        emploID=browser.find_element_by_xpath('//*[@id="664936884"]')
+        button2=browser.find_element_by_xpath('//*[@id="664936876_4368478788_label"]/span[1]')
+        bodytemp=browser.find_element_by_xpath('//*[@id="664936872"]')
+        button4=browser.find_element_by_xpath('//*[@id="664936881_4368478813_label"]/span[1]')
+        button5=browser.find_element_by_xpath('//*[@id="664936882_4368478814_label"]/span[1]')
+        button6=browser.find_element_by_xpath('//*[@id="664936883_4368478817_label"]/span[1]')
+        button7=browser.find_element_by_xpath('//*[@id="664936885_4368478848_label"]/span[1]')
+        button8=browser.find_element_by_xpath('//*[@id="664937035_4368479770_label"]/span[1]')
+        buttonYes=browser.find_element_by_xpath('//*[@id="664936873_4368478778_label"]/span[1]')
+        buttonDone=browser.find_element_by_xpath('//*[@id="patas"]/main/article/section/form/div[2]/button')
 
-    emploID.send_keys(emploIDlst[i])
+        buttonAgree.click()
 
-    button2.click()
+        emploID.send_keys(emploIDlst[i])
 
-    bodytemp.send_keys(str(35.5+random.randint(1,12)*0.1))
+        button2.click()
 
-    button4.click()
-    button5.click()
-    button6.click()
-    button7.click()
-    button8.click()
-    buttonYes.click()
-   #buttonDone.click()
+        bodytemp.send_keys(str(35.5+random.randint(1,12)*0.1))
+
+        button4.click()
+        button5.click()
+        button6.click()
+        button7.click()
+        button8.click()
+        buttonYes.click()
+    #   buttonDone.click()
+def main():
+    reportBodyTemperature(browser,emploIDlst)
+
+if __name__ == '__main__':
+    main()
