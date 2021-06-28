@@ -1,0 +1,13 @@
+from selenium import webdriver
+from reportBodyTemperature import Report
+
+emploIDlst=['H0289550','T7907280','U9168010']#在這邊加入工號
+
+
+def main():
+    browser = webdriver.Chrome(r'C:\chromedriver')
+    Report(browser,emploIDlst)
+
+
+if __name__ == '__main__':
+    main()
