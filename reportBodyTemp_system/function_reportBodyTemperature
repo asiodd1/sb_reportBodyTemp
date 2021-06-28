@@ -1,16 +1,7 @@
 from selenium import webdriver
-#from selenium.webdriver.support.ui import WebDriverWait
-#from selenium.webdriver.support import expected_conditions
-#from selenium.webdriver.common.by import By
-#from bs4 import BeautifulSoup
 import random
 
-
-emploIDlst=['H0289550','T7907280','U9168010']#在這邊加入工號
-
-browser = webdriver.Chrome(r'C:\chromedriver')
-
-def reportBodyTemperature(browser,emploIDlst):
+def Report(browser,emploIDlst):
 
     for i in range(len(emploIDlst)):
         
@@ -43,9 +34,4 @@ def reportBodyTemperature(browser,emploIDlst):
         button7.click()
         button8.click()
         buttonYes.click()
-    #   buttonDone.click()
-def main():
-    reportBodyTemperature(browser,emploIDlst)
-
-if __name__ == '__main__':
-    main()
+        buttonDone.click()
