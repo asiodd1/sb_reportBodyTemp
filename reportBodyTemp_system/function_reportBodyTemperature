@@ -1,0 +1,37 @@
+from selenium import webdriver
+import random
+
+def Report(browser,emploIDlst):
+
+    for i in range(len(emploIDlst)):
+        
+        url='https://zh.surveymonkey.com/r/VendorHealthCheck'
+        browser.get(url)
+
+        buttonAgree=browser.find_element_by_xpath('//*[@id="664936874_4368478786_label"]/span[1]')
+        emploID=browser.find_element_by_xpath('//*[@id="664936884"]')
+        button2=browser.find_element_by_xpath('//*[@id="664936876_4368478788_label"]/span[1]')
+        bodytemp=browser.find_element_by_xpath('//*[@id="664936872"]')
+        button4=browser.find_element_by_xpath('//*[@id="664936881_4368478813_label"]/span[1]')
+        button5=browser.find_element_by_xpath('//*[@id="664936882_4368478814_label"]/span[1]')
+        button6=browser.find_element_by_xpath('//*[@id="664936883_4368478817_label"]/span[1]')
+        button7=browser.find_element_by_xpath('//*[@id="664936885_4368478848_label"]/span[1]')
+        button8=browser.find_element_by_xpath('//*[@id="664937035_4368479770_label"]/span[1]')
+        buttonYes=browser.find_element_by_xpath('//*[@id="664936873_4368478778_label"]/span[1]')
+        buttonDone=browser.find_element_by_xpath('//*[@id="patas"]/main/article/section/form/div[2]/button')
+
+        buttonAgree.click()
+
+        emploID.send_keys(emploIDlst[i])
+
+        button2.click()
+
+        bodytemp.send_keys(str(35.5+random.randint(1,12)*0.1))
+
+        button4.click()
+        button5.click()
+        button6.click()
+        button7.click()
+        button8.click()
+        buttonYes.click()
+        buttonDone.click()
