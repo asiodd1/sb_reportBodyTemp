@@ -28,7 +28,7 @@ from threading import Thread
 
 
 def autoreport():
-    browser2=webdriver.Chrome(r'C:\chromedriver')
+    
     while True:
 
         wday=(time.localtime(time.time())).tm_wday
@@ -50,7 +50,7 @@ def autoreport():
                     emploIDlst.append(j)
             
             url='https://zh.surveymonkey.com/r/VendorHealthCheck'
-            
+            browser2=webdriver.Chrome(r'C:\chromedriver')
             
             
             for i in range(len(emploIDlst)):
@@ -90,7 +90,8 @@ def autoreport():
                 buttonYes.click()
                 buttonDone.click()
 
-            browser2.close()
+            browser2.quit()
+            print('今日回報完畢'+time.ctime())
             time.sleep(55)
             
         else:
