@@ -34,7 +34,7 @@ def autoreport():
         wday=(time.localtime(time.time())).tm_wday
         hr=(time.localtime(time.time())).tm_hour
         mn=(time.localtime(time.time())).tm_min
-        wset={0,1,2,3,4}
+        wset={0,1,2,3,4,5}
         
         if wday in wset and hr==7 and mn==30 :
             
@@ -57,18 +57,18 @@ def autoreport():
 
                 browser2.get(url)
 
-                buttonagree=browser2.find_element_by_xpath('//*[@id="683680575_4495738438_label"]/span[1]')
-                emploID=browser2.find_element_by_xpath('//*[@id="683680584"]')
-                button2=browser2.find_element_by_xpath('//*[@id="683680577_4495738440_label"]/span[1]')
-                bodytemp=browser2.find_element_by_xpath('//*[@id="683680573"]')
-                button3=browser2.find_element_by_xpath('//*[@id="question-field-683680590"]/fieldset/div/div[1]/div[1]/div/label/span[1]')
-                button4=browser2.find_element_by_xpath('//*[@id="683680582_4495738465_label"]/span[1]')
-                button4_2=browser2.find_element_by_xpath('//*[@id="683680812_4495740026_label"]/span[1]')
-                button5=browser2.find_element_by_xpath('//*[@id="683680583_4496057527_label"]/span[1]')
-                button6=browser2.find_element_by_xpath('//*[@id="683680588_4496057876_label"]/span[1]')
-                button9=browser2.find_element_by_xpath('//*[@id="683680586_4495738508_label"]/span[1]')
-                button10=browser2.find_element_by_xpath('//*[@id="683680587_4495738514_label"]/span[1]')
-                buttonpage= None
+                buttonagree=browser2.find_element_by_xpath('//*[@id="715035932_4702751347_label"]/span[1]')
+                emploID=browser2.find_element_by_xpath('//*[@id="715035941"]')
+                button2=browser2.find_element_by_xpath('//*[@id="715035934_4702751349_label"]/span[1]')
+                bodytemp=browser2.find_element_by_xpath('//*[@id="715035930"]')
+                button3=browser2.find_element_by_xpath('//*[@id="question-field-715035946"]/fieldset/div/div[1]/div[1]/div/label/span[1]')
+                button4=browser2.find_element_by_xpath('//*[@id="715035939_4702751374_label"]/span[1]')
+                button4_2=browser2.find_element_by_xpath('//*[@id="715035947_4702751471_label"]/span[1]')
+                #button5=browser2.find_element_by_xpath('//*[@id="683680583_4496057527_label"]/span[1]')
+                #button6=browser2.find_element_by_xpath('//*[@id="683680588_4496057876_label"]/span[1]')
+                #button9=browser2.find_element_by_xpath('//*[@id="683680586_4495738508_label"]/span[1]')
+                #button10=browser2.find_element_by_xpath('//*[@id="683680587_4495738514_label"]/span[1]')
+                #buttonpage= None
 
                 buttonagree.click()
                 emploID.send_keys(emploIDlst[i])
@@ -77,14 +77,14 @@ def autoreport():
                 button3.click()
                 button4.click()
                 button4_2.click()
-                button5.click()
-                button6.click()
-                button9.click()
-                button10.click()
+                #button5.click()
+                #button6.click()
+                #button9.click()
+                #button10.click()
                 #buttonpage.click()
 
 
-                buttonYes=browser2.find_element_by_xpath('//*[@id="683680574_4495738430_label"]/span[1]')
+                buttonYes=browser2.find_element_by_xpath('//*[@id="715035931_4702751339_label"]/span[1]')
                 buttonDone=browser2.find_element_by_xpath('//*[@id="patas"]/main/article/section/form/div[2]/button')
 
 
@@ -130,21 +130,20 @@ def userreport():
         emploIDlst = venlst[entry_emplo.get()]
         browser2=webdriver.Chrome(r'C:\chromedriver')
         for i in range(len(emploIDlst)):
-
                 browser2.get(url)
 
-                buttonagree=browser2.find_element_by_xpath('//*[@id="683680575_4495738438_label"]/span[1]')
-                emploID=browser2.find_element_by_xpath('//*[@id="683680584"]')
-                button2=browser2.find_element_by_xpath('//*[@id="683680577_4495738440_label"]/span[1]')
-                bodytemp=browser2.find_element_by_xpath('//*[@id="683680573"]')
-                button3=browser2.find_element_by_xpath('//*[@id="question-field-683680590"]/fieldset/div/div[1]/div[1]/div/label/span[1]')
-                button4=browser2.find_element_by_xpath('//*[@id="683680582_4495738465_label"]/span[1]')
-                button4_2=browser2.find_element_by_xpath('//*[@id="683680812_4495740026_label"]/span[1]')
-                button5=browser2.find_element_by_xpath('//*[@id="683680583_4496057527_label"]/span[1]')
-                button6=browser2.find_element_by_xpath('//*[@id="683680588_4496057876_label"]/span[1]')
-                button9=browser2.find_element_by_xpath('//*[@id="683680586_4495738508_label"]/span[1]')
-                button10=browser2.find_element_by_xpath('//*[@id="683680587_4495738514_label"]/span[1]')
-                buttonpage= None
+                buttonagree=browser2.find_element_by_xpath('//*[@id="715035932_4702751347_label"]/span[1]')
+                emploID=browser2.find_element_by_xpath('//*[@id="715035941"]')
+                button2=browser2.find_element_by_xpath('//*[@id="715035934_4702751349_label"]/span[1]')
+                bodytemp=browser2.find_element_by_xpath('//*[@id="715035930"]')
+                button3=browser2.find_element_by_xpath('//*[@id="question-field-715035946"]/fieldset/div/div[1]/div[1]/div/label/span[1]')
+                button4=browser2.find_element_by_xpath('//*[@id="715035939_4702751374_label"]/span[1]')
+                button4_2=browser2.find_element_by_xpath('//*[@id="715035947_4702751471_label"]/span[1]')
+                #button5=browser2.find_element_by_xpath('//*[@id="683680583_4496057527_label"]/span[1]')
+                #button6=browser2.find_element_by_xpath('//*[@id="683680588_4496057876_label"]/span[1]')
+                #button9=browser2.find_element_by_xpath('//*[@id="683680586_4495738508_label"]/span[1]')
+                #button10=browser2.find_element_by_xpath('//*[@id="683680587_4495738514_label"]/span[1]')
+                #buttonpage= None
 
                 buttonagree.click()
                 emploID.send_keys(emploIDlst[i])
@@ -153,14 +152,14 @@ def userreport():
                 button3.click()
                 button4.click()
                 button4_2.click()
-                button5.click()
-                button6.click()
-                button9.click()
-                button10.click()
+                #button5.click()
+                #button6.click()
+                #button9.click()
+                #button10.click()
                 #buttonpage.click()
 
 
-                buttonYes=browser2.find_element_by_xpath('//*[@id="683680574_4495738430_label"]/span[1]')
+                buttonYes=browser2.find_element_by_xpath('//*[@id="715035931_4702751339_label"]/span[1]')
                 buttonDone=browser2.find_element_by_xpath('//*[@id="patas"]/main/article/section/form/div[2]/button')
 
 
